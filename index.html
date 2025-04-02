@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChurnGuard | Customer Retention Analytics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <div class="background-animation"></div>
+    
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i>
+                <h1>Churn<span>Guard</span></h1>
+            </div>
+            <p class="tagline">AI-powered Customer Retention Platform</p>
+        </header>
+
+        <main class="main-content">
+            <div class="analytics-card card">
+                <div class="card-header">
+                    <h2><i class="fas fa-user-circle"></i> Customer Analysis</h2>
+                    <div class="pulse-animation"></div>
+                </div>
+                
+                <form id="customerForm" class="analytics-form">
+                    <div class="form-group floating">
+                        <input type="text" id="customerId" required>
+                        <label for="customerId">Customer ID</label>
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" id="submitBtn" class="btn btn-analyze">
+                            <span class="btn-text">Analyze</span>
+                            <i class="fas fa-chart-line"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="results-container">
+                <div class="results-card card" id="resultsCard" style="display: none;">
+                    <div class="card-header">
+                        <h2><i class="fas fa-chart-pie"></i> Customer Profile</h2>
+                    </div>
+                    <div class="customer-data" id="customerData"></div>
+                    <button id="predictBtn" class="btn btn-predict">
+                        <span class="btn-text">Predict Behavior</span>
+                        <i class="fas fa-robot"></i>
+                    </button>
+                </div>
+
+                <div class="prediction-card card" id="predictionCard" style="display: none;">
+                    <div class="card-header">
+                        <h2><i class="fas fa-crystal-ball"></i> AI Predictions</h2>
+                    </div>
+                    <div class="prediction-grid">
+                        <div class="prediction-item churn-risk">
+                            <div class="prediction-icon">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="prediction-content">
+                                <h3>Churn Risk</h3>
+                                <div class="prediction-value" id="churnPrediction">--</div>
+                                <div class="prediction-probability" id="churnProbability">Probability: --</div>
+                            </div>
+                        </div>
+                        
+                        <div class="prediction-item cltv-value">
+                            <div class="prediction-icon">
+                                <i class="fas fa-coins"></i>
+                            </div>
+                            <div class="prediction-content">
+                                <h3>Lifetime Value</h3>
+                                <div class="prediction-value" id="cltvPrediction">--</div>
+                                <div class="customer-tier" id="customerValue">Tier: --</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="insights-card">
+                        <div class="card-header">
+                            <h2><i class="fas fa-lightbulb"></i> AI Recommendations</h2>
+                        </div>
+                        <div class="insights-content" id="insightsText">
+                            <div class="empty-state">
+                                <i class="fas fa-robot"></i>
+                                <p>Run prediction to see AI recommendations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="static/js/script.js"></script>
+</body>
+</html>
